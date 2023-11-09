@@ -1,0 +1,42 @@
+<%- include ('partials/header.ejs'); %>
+<%- include ('partials/navbar.ejs'); %>
+
+
+
+ <body>
+  <div class="container">
+    
+    <div class="card-header">
+      <h3>CPF:<%= CPF %></h3>
+
+     <a href="/gerarcpf"><button class="btn btn-success">Gerar CPF</button> </a> 
+     <button class="btn btn-primary" onclick="copyToClipboard('<%= CPF %>')">Copiar</button>
+     <div class="mt-3" id="confirmationMessage" style="display: none; color: green;">Copiado com sucesso!&#10004;</div>
+      </div>
+    
+  </div>
+
+   
+ </body>
+
+ <script>
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        console.log('Texto copiado com sucesso!');
+        // Exiba a mensagem de confirmação
+        document.getElementById('confirmationMessage').style.display = 'block';
+        // Oculte a mensagem após alguns segundos (opcional)
+        setTimeout(() => {
+          document.getElementById('confirmationMessage').style.display = 'none';
+        }, 2000);
+      })
+      .catch(err => {
+        console.error('Erro ao copiar texto: ', err);
+      });
+  }
+</script>
+
+
+
+ <%- include ('partials/footer.ejs'); %>
