@@ -31,7 +31,11 @@ function gerarCpfAleatorio() {
 
   return cpf;
 }
+var CPF2 = '';
 
+function pontuacao(){
+  return CPF2.replace(/(\d{3})(\d{3})(\d{3})/, '$1.$2.$3-');
+};
 
 
 module.exports = router;
