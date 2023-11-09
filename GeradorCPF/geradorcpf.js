@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-function gerarCpfAleatorio() {
+function gerarCpfAleatorio(ponto) {
   let cpf = '';
   for (let i = 0; i < 9; i++) {
     cpf += Math.floor(Math.random() * 10);
@@ -28,14 +28,22 @@ function gerarCpfAleatorio() {
     segundoDigito = 0;
   }
   cpf += segundoDigito;
-
-  return cpf;
+  if(ponto){
+    return cpf.replace(/(\d{3})(\d{3})(\d{3})/, '$1.$2.$3-');
+  }else{
+    return cpf;
+  }
+ 
 }
-var CPF2 = '';
 
-function pontuacao(){
+
+
+/*function pontuacao2(){
+  CPF2 = gerarCpfAleatorio();
   return CPF2.replace(/(\d{3})(\d{3})(\d{3})/, '$1.$2.$3-');
-};
+  
+  
+};*/
 
 
 module.exports = router;
