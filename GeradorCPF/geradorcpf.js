@@ -38,12 +38,7 @@ function gerarCpfAleatorio(ponto) {
 
 
 
-/*function pontuacao2(){
-  CPF2 = gerarCpfAleatorio();
-  return CPF2.replace(/(\d{3})(\d{3})(\d{3})/, '$1.$2.$3-');
-  
-  
-};*/
+
 
 
 module.exports = router;

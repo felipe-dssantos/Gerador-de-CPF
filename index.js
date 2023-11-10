@@ -7,7 +7,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 const resultado = gerarCpfAleatorio();
 var CPF = '';
-app.get("/gerarcpf", (req, res) => {
+app.get("/gerarcpfsemponto", (req, res) => {
 
   CPF = gerarCpfAleatorio(false);
 
@@ -15,6 +15,13 @@ app.get("/gerarcpf", (req, res) => {
 
 });
 
+app.get("/gerarcpfcomponto", (req, res) => {
+
+  CPF = gerarCpfAleatorio(true);
+
+  res.redirect("/");
+
+});
 var CPF1 = '';
 function pontuacao(){
   return CPF1.replace(/(\d{3})(\d{3})(\d{3})/, '$1.$2.$3-');
