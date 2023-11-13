@@ -1,6 +1,3 @@
-const express = require("express");
-const router = express.Router();
-
 function gerarCpfAleatorio(ponto) {
   let cpf = '';
   for (let i = 0; i < 9; i++) {
@@ -35,11 +32,4 @@ function gerarCpfAleatorio(ponto) {
   }
  
 }
-
-
-
-
-
-
-module.exports = router;
 module.exports = gerarCpfAleatorio;
