@@ -17,15 +17,23 @@
         <h3>CNPJ:<%= CNPJ %></h3>  
         <a href="/gerarcnpj"><button class="btn btn-success">Gerar CNPJ</button></a>
         <a href="/gerarcnpjsemponto"><button class="btn btn-success">Gerar CNPJ sem pontuação</button></a>
-       <button class="btn btn-primary" onclick="copyToClipboard2('<%= CNPJ %>')">Copiar</button>
+       <button class="btn btn-primary" onclick="copyToClipboard('<%= CNPJ %>')">Copiar</button>
       </div>
     <br>
       <div class="card-header">
         <h3>Senha:<%= senha %></h3>  
         <a href="/gerarsenha"><button class="btn btn-success">Gerar Senha</button></a>
-       <button class="btn btn-primary" onclick="copyToClipboard2('<%= senha %>')">Copiar</button>
+       <button class="btn btn-primary" onclick="copyToClipboard('<%= senha %>')">Copiar</button>
       </div>
-    <div class="mt-3" id="confirmationMessage" style="display: none; color: green;">Copiado com sucesso!&#10004;</div>  
+    <br>
+    <div class="card-header">
+      <h3>Placa:<%= placa %></h3>  
+      <a href="/gerarplaca"><button class="btn btn-success">Gerar placa</button></a>
+      <a href="/gerarplacaantiga"><button class="btn btn-success">Gerar placa antiga</button></a>
+     <button class="btn btn-primary" onclick="copyToClipboard('<%= placa %>')">Copiar</button>
+    </div>
+    <br>
+      <div class="mt-3" id="confirmationMessage" style="display: none; color: green;">Copiado com sucesso!&#10004;</div>  
   </div>
 
    
@@ -58,21 +66,3 @@
   }
 </script>
 <script>
-
-
-  function copyToClipboard2(text) {
-    navigator.clipboard.writeText(text)
-      .then(() => {
-        console.log('Texto copiado com sucesso!');
-        // Exiba a mensagem de confirmação
-        document.getElementById('confirmationMessage').style.display = 'block';
-        // Oculte a mensagem após alguns segundos (opcional)
-        setTimeout(() => {
-          document.getElementById('confirmationMessage').style.display = 'none';
-        }, 2000);
-      })
-      .catch(err => {
-        console.error('Erro ao copiar texto: ', err);
-      });
-  }
-</script>

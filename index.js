@@ -4,10 +4,11 @@ const port = 3000;
 const gerarCpfAleatorio = require('./GeradorCPF/geradorcpf');
 const gerarCNPJ = require('./GeradorCNPJ/geradorcnpj');
 const gerarSenha = require('./GeradorSenha/geradorsenha');
+const {gerarPlacaAntiga,gerarPlacaMercosul} = require('./Gerarplaca/gerarplaca');
 var senha;
 var CNPJ;
 var CPF;
-
+var placa;
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -42,13 +43,21 @@ app.get("/gerarsenha", (req,res)=>{
   res.redirect("/");
 });
 
+app.get("/gerarplaca", (req,res)=> {
+  placa = gerarPlacaMercosul();
+  res.redirect("/");
+});
+
+app.get("/gerarplacaantiga", (req,res)=> {
+  placa = gerarPlacaAntiga();
+  res.redirect("/");
+});
 app.get("/", (req, res) => {
-  res.render("index", ({CPF,CNPJ,senha}));
+  res.render("index", ({CPF,CNPJ,senha,placa}));
 });
 
 
 
- 
 
 app.listen(port, () => {
   console.log(`Servidor está rodando na porta ${port}`);
