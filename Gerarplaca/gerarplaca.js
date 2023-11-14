@@ -18,7 +18,7 @@ function gerarPlacaMercosul() {
         return result;
     }
 
-    // Placa Mercosul: ABC1D23
+  
     const placa = gerarLetras(3) + gerarNumeros(1) + gerarLetras(1) + gerarNumeros(2);
 
     return placa;
@@ -44,20 +44,6 @@ function gerarPlacaAntiga() {
     return PlacaAntiga;
 }
 
-function mercosulParaAntiga(merc) {
-    // A placa Mercosul tem o formato ABC1D23
-    // A placa antiga tem o formato ABC-1234
-
-    // Extrai as letras e números da placa Mercosul
-    const letras = merc.slice(0, 3);
-    const numero1 = merc.slice(3, 4);
-    const letra2 = merc.slice(4, 5);
-    const numeros23 = merc.slice(5);
-
-    // Forma a placa antiga
-    const placaAntiga = letras + '-' + numero1 + letra2 + numeros23;
-    return placaAntiga;
-}
 
 
 

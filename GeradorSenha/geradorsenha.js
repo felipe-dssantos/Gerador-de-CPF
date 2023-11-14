@@ -15,6 +15,4 @@ function gerarSenha() {
     return retVal;
 }
 
-
-
 module.exports = gerarSenha;
