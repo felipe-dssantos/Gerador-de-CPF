@@ -4,6 +4,7 @@ const port = 3000;
 const gerarCpfAleatorio = require('./GeradorCPF/geradorcpf');
 const gerarCNPJ = require('./GeradorCNPJ/geradorcnpj');
 const gerarSenha = require('./GeradorSenha/geradorsenha');
+const corversorplaca = require('./Conversordeplaca/corversorplaca');
 const {gerarPlacaAntiga,gerarPlacaMercosul} = require('./Gerarplaca/gerarplaca');
 var senha;
 var CNPJ;
