@@ -59,7 +59,6 @@ app.get("/", (req, res) => {
 
 
 
-
 app.listen(port, () => {
   console.log(`Servidor está rodando na porta ${port}`);
 });
